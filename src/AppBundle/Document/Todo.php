@@ -1,6 +1,8 @@
 <?php
 /*
  * Models a To do object, owned by a user.
+ *
+ * A index has been created on userId in the command line tool.
  */
 
 namespace AppBundle\Document;
