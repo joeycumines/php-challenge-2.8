@@ -5,7 +5,6 @@
 
 namespace AppBundle\ControllerTemplates;
 
-
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -27,9 +26,9 @@ class JSONControllerException extends \Exception
      * JSONControllerException constructor.
      * @param string|null $message
      * @param int $code
-     * @param Exception|null $previous
+     * @param \Exception $previous
      */
-    public function __construct($message = null, $code = 0, Exception $previous = null) {
+    public function __construct($message = null, $code = 0, \Exception $previous = null) {
         parent::__construct($message, $code, $previous);
     }
 
@@ -50,18 +49,19 @@ class JSONController extends Controller
      * If it was unable to parse the body (malformed JSON or JSON array, or no body) then a JSONControllerException
      * is thrown.
      *
+     * @param Request $request
      * @return array
      * @throws JSONControllerException
      */
-    protected function getRequestBody()
+    protected function bodyAsJSON($request)
     {
         $params = null;
         try {
-            $content = $this->get("request")->getContent();
+            $content = $request->getContent();
             if (!empty($content)) {
                 $params = json_decode($content, true);
             }
-        } catch (Exception $e){
+        } catch (\Exception $e){
             throw new JSONControllerException("Error parsing the request body.", 1, $e);
         }
 
@@ -69,5 +69,14 @@ class JSONController extends Controller
             throw new JSONControllerException("Unable to parse non existent or empty request body.", 1);
 
         return $params;
+    }
+
+    /**
+     * Shortcut to get the Doctrine manager for MongoDB.
+     *
+     * @return \Doctrine\Common\Persistence\ObjectManager|object
+     */
+    protected function dm(){
+        return $this->get('doctrine_mongodb')->getManager();
     }
 }

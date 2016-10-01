@@ -109,4 +109,27 @@ class Todo
     {
         return $this->completed;
     }
+
+    /**
+     * Gets an array representation of this object.
+     *
+     * Doesn't include user id since we only use that internally.
+     */
+    public function serialize(){
+        return array('_id'=>$this->id, 'title'=>$this->title, 'completed'=>$this->completed);
+    }
+
+    /**
+     * Sets the properties of this document.
+     *
+     * Any null parameters are ignored for this call.
+     * @param string $title
+     * @param boolean $completed
+     */
+    public function set($title = null, $completed = null){
+        if ($title != null)
+            $this->setTitle($title);
+        if ($completed != null)
+            $this->setCompleted($completed);
+    }
 }
