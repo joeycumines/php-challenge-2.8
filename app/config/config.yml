@@ -74,3 +74,7 @@ doctrine_mongodb:
     document_managers:
         default:
             auto_mapping: true
+fos_user:
+    db_driver: mongodb
+    firewall_name: main
+    user_class: AppBundle\Entity\User
