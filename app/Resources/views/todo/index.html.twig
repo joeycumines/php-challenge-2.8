@@ -8,10 +8,8 @@
     {% block pageTitle %}
         <title>A simple todo app in Symfony 2.8 by Joseph Cumines</title>
     {% endblock %}
-    {% block pageCssLibs %}
-        {{ include('libs/bootstrapcss.html.twig') }}
-        <link rel="stylesheet" type="text/css" href="{{ asset('css/todoEditor.css') }}">
-    {% endblock %}
+    {{ include('libs/bootstrapcss.html.twig') }}
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/todoEditor.css') }}">
 </head>
 <body>
 <div id="content" class="container">
@@ -27,9 +25,10 @@
     {% endblock %}
     <a href="{{ path('fos_user_security_logout') }}"><p class="text-xs-center">Click Here to Logout</p></a>
     <p class="text-xs-center">This application was created by <a href="http://joeycumines.me">Joseph Cumines</a></p>
-    {% block pageJSLibs %}
-        {{ include('libs/boostrapjs.html.twig') }}
-    {% endblock %}
+    <script src="{{ asset('js/jcumines.js') }}"></script>
+    {{ include('libs/boostrapjs.html.twig') }}
+    {{ include('libs/react.html.twig') }}
+    <script type="text/babel" src="{{ asset('js/todo.js') }}"></script>
 </div>
 </body>
 </html>

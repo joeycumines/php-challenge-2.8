@@ -16,5 +16,8 @@
         </SOURCES>
       </library>
     </orderEntry>
+    <orderEntry type="library" name="jsfiddle-integration-babel" level="application" />
+    <orderEntry type="library" name="browser" level="application" />
+    <orderEntry type="library" name="babel" level="application" />
   </component>
 </module>
