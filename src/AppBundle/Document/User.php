@@ -27,4 +27,13 @@ class User extends BaseUser
     {
         parent::__construct();
     }
+
+    /**
+     * Return the id as string.
+     * @return string
+     */
+    public function getIdString()
+    {
+        return '' . $this->id;
+    }
 }

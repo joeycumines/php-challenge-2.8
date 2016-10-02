@@ -24,12 +24,50 @@ class TodoController extends JSONController
      * @Route("/todo", name="get_todo")
      * @Method({"GET"})
      *
+     * Gets the ids of all items.
      *
-     * @param Request $request
      * @return JsonResponse
      */
-    public function getTodoAction(Request $request){
+    public function getTodoAction()
+    {
+        //Get all to do for this user
+        $todos = $this->dm()->createQueryBuilder('AppBundle:Todo')
+            ->field('userId')->equals($this->getUser()->getIdString())
+            ->getQuery()->execute();
 
+        //get the ids
+
+        $output = array();
+        foreach ($todos as $todo) {
+            array_push($output, '' . $todo->getId());
+        }
+
+        return new JsonResponse($output);
+    }
+
+    /**
+     * @Route("/todo", name="delete_todo")
+     * @Method({"DELETE"})
+     *
+     * Deletes all of the existing To do entries for this user.
+     *
+     * @return JsonResponse
+     */
+    public function deleteTodoAction()
+    {
+        $itemsDeleted = 0;
+        try {
+            $collection = $this->dm()->getDocumentCollection('AppBundle:Todo');
+            //The result from the mongodb operation
+            $mongoResult = $collection->remove(array('userId' => $this->getUser()->getIdString()));
+            if (is_array($mongoResult) && isset($mongoResult['n']))
+                $itemsDeleted = intval($mongoResult['n']);
+            $this->dm()->flush();
+        } catch (Exception $e) {
+            return new JsonResponse('' . $e, 500);
+        }
+
+        return new JsonResponse('Successfully removed all (' . $itemsDeleted . ') todo items for this user.');
     }
 
     /**
@@ -72,7 +110,7 @@ class TodoController extends JSONController
         $todo = new Todo();
         $todo->setCompleted(false);
         $todo->setTitle($body['title']);
-        $todo->setUserId($this->getUser()->getId());
+        $todo->setUserId($this->getUser()->getIdString());
 
         $this->dm()->persist($todo);
         $this->dm()->flush();
@@ -82,14 +120,29 @@ class TodoController extends JSONController
 
     /**
      * @Route("/todo/{id}", name="get_todo_id")
-     * @Method({"POST"})
+     * @Method({"GET"})
+     *
+     * Gets a specific item.
      *
      * @param string $id
-     * @param Request $request
      * @return JsonResponse
      */
-    public function getTodoIdAction($id, Request $request){
+    public function getTodoIdAction($id)
+    {
+        $item = $this->get('doctrine_mongodb')
+            ->getRepository('AppBundle:Todo')
+            ->find($id);
 
+        if (!$item) {
+            return new JsonResponse('Not Found', 404);
+        }
+
+        //if we are forbidden (we are authorized)
+        if ($item->getUserId() != $this->getUser()->getIdString()) {
+            return new JsonResponse('Forbidden', 403);
+        }
+
+        return new JsonResponse($item->serialize());
     }
 
     /**
@@ -101,7 +154,23 @@ class TodoController extends JSONController
      * @return JsonResponse
      */
     public function deleteTodoIdAction($id, Request $request){
+        $item = $this->get('doctrine_mongodb')
+            ->getRepository('AppBundle:Todo')
+            ->find($id);
 
+        if (!$item) {
+            return new JsonResponse('Not Found', 404);
+        }
+
+        //if we are forbidden (we are authorized)
+        if ($item->getUserId() != $this->getUser()->getIdString()) {
+            return new JsonResponse('Forbidden', 403);
+        }
+
+        $this->dm()->remove($item);
+        $this->dm()->flush();
+
+        return new JsonResponse('Successfully deleted ' . $id);
     }
 
     /**
@@ -113,6 +182,53 @@ class TodoController extends JSONController
      * @return JsonResponse
      */
     public function putTodoIdAction($id, Request $request){
+        $item = $this->get('doctrine_mongodb')
+            ->getRepository('AppBundle:Todo')
+            ->find($id);
 
+        if (!$item) {
+            return new JsonResponse('Not Found', 404);
+        }
+
+        //if we are forbidden (we are authorized)
+        if ($item->getUserId() != $this->getUser()->getIdString()) {
+            return new JsonResponse('Forbidden', 403);
+        }
+
+        $body = array();
+        try {
+            $body = $this->bodyAsJSON($request);
+        } catch (JSONControllerException $e) {
+            return new JsonResponse('' . $e, 400);
+        }
+        $title = null;
+        $completed = null;
+        if (isset($body['title'])) {
+            if (is_string($body['title']))
+                $title = $body['title'];
+            else
+                return new JsonResponse('Bad Request: The body parameter "title" was not type "string".', 400);
+        }
+        if (isset($body['completed'])) {
+            if (is_bool($body['completed']))
+                $completed = $body['completed'];
+            else
+                return new JsonResponse('Bad Request: The body parameter "completed" was not type "boolean".', 400);
+        }
+
+        if ($title == null && $completed == null)
+            return new JsonResponse('Bad Request: You must set the body param "title" and/or "completed".', 400);
+
+        //Actually set the values
+        $item->set($title, $completed);
+
+        $this->dm()->flush();
+
+        if ($title == null)
+            return new JsonResponse('Successfully set "completed" to ' . $completed . '.');
+        if ($completed == null)
+            return new JsonResponse('Successfully set "title" to "' . $title . '".');
+
+        return new JsonResponse('Successfully set "title" to "' . $title . '" and "completed" to ' . $completed . '.');
     }
 }

@@ -20,7 +20,7 @@ class Todo
     protected $id;
 
     /**
-     * @MongoDB\Field(type="object_id")
+     * @MongoDB\Field(type="string")
      */
     protected $userId;
 
@@ -47,7 +47,7 @@ class Todo
     /**
      * Set userId
      *
-     * @param object_id $userId
+     * @param string $userId
      * @return $this
      */
     public function setUserId($userId)
@@ -59,7 +59,7 @@ class Todo
     /**
      * Get userId
      *
-     * @return object_id $userId
+     * @return string $userId
      */
     public function getUserId()
     {
@@ -114,6 +114,8 @@ class Todo
      * Gets an array representation of this object.
      *
      * Doesn't include user id since we only use that internally.
+     *
+     * @return array
      */
     public function serialize(){
         return array('_id'=>$this->id, 'title'=>$this->title, 'completed'=>$this->completed);
