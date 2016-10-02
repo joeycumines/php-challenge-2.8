@@ -92,9 +92,11 @@ class TodoControllerTest extends WebTestCase
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
         $items = $this->responseAsJSON($client);
         $this->assertEquals(3, count($items));
-        $this->assertEquals($id1, $items[0]);
-        $this->assertEquals($id2, $items[1]);
-        $this->assertEquals($id3, $items[2]);
+        $this->assertEquals($id1, $items[0]['_id']);
+        $this->assertEquals('Todo Test 1', $items[0]['title']);
+        $this->assertEquals(false, $items[0]['completed']);
+        $this->assertEquals($id2, $items[1]['_id']);
+        $this->assertEquals($id3, $items[2]['_id']);
         unset($items);
 
         //Try getting each specific item
@@ -190,8 +192,8 @@ class TodoControllerTest extends WebTestCase
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
         $items = $this->responseAsJSON($client);
         $this->assertEquals(2, count($items));
-        $this->assertEquals($id1, $items[0]);
-        $this->assertEquals($id3, $items[1]);
+        $this->assertEquals($id1, $items[0]['_id']);
+        $this->assertEquals($id3, $items[1]['_id']);
         unset($items);
 
         //assert the values and responses from a GET to each item

@@ -35,11 +35,15 @@ class TodoController extends JSONController
             ->field('userId')->equals($this->getUser()->getIdString())
             ->getQuery()->execute();
 
-        //get the ids
+        //get the _id, title, and completed
 
         $output = array();
         foreach ($todos as $todo) {
-            array_push($output, '' . $todo->getId());
+            $temp = array();
+            $temp['_id'] = '' . $todo->getId();
+            $temp['completed'] = $todo->getCompleted();
+            $temp['title'] = $todo->getTitle();
+            array_push($output, $temp);
         }
 
         return new JsonResponse($output);
