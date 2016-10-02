@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="a8bc9f2e-7237-4257-be62-a4ed8a4ecf58" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/jcumines.js" afterPath="$PROJECT_DIR$/web/js/jcumines.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/TodoController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/TodoController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/todoEditor.css" afterPath="$PROJECT_DIR$/web/css/todoEditor.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/todo.js" afterPath="$PROJECT_DIR$/web/js/todo.js" />
     </list>
     <ignored path="php-challenge-2.8.iws" />
@@ -24,7 +25,7 @@
     <favorites_list name="php-challenge-2.8" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="boostrapjs.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/libs/boostrapjs.html.twig">
           <provider selected="true" editor-type-id="text-editor">
@@ -58,7 +59,7 @@
       <file leaf-file-name="jcumines.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/js/jcumines.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="113">
+            <state relative-caret-position="6817">
               <caret line="403" column="0" selection-start-line="403" selection-start-column="0" selection-end-line="403" selection-end-column="15" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
@@ -70,18 +71,18 @@
       <file leaf-file-name="todoEditor.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/css/todoEditor.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="767">
-              <caret line="51" column="22" selection-start-line="51" selection-start-column="22" selection-end-line="51" selection-end-column="22" />
+            <state relative-caret-position="850">
+              <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="todo.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="todo.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/js/todo.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-808">
-              <caret line="247" column="60" selection-start-line="247" selection-start-column="60" selection-end-line="247" selection-end-column="60" />
+            <state relative-caret-position="5083">
+              <caret line="303" column="42" selection-start-line="303" selection-start-column="42" selection-end-line="303" selection-end-column="42" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -89,11 +90,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TodoController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="TodoController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/TodoController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+            <state relative-caret-position="428">
+              <caret line="220" column="36" selection-start-line="220" selection-start-column="36" selection-end-line="220" selection-end-column="36" />
               <folding>
                 <element signature="e#210#259#0#PHP" expanded="true" />
               </folding>
@@ -104,7 +105,7 @@
       <file leaf-file-name="TodoControllerTest.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Tests/Controller/TodoControllerTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="381">
+            <state relative-caret-position="1547">
               <caret line="92" column="48" selection-start-line="92" selection-start-column="48" selection-end-line="92" selection-end-column="48" />
               <folding />
             </state>
@@ -114,7 +115,7 @@
       <file leaf-file-name="Todo.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Document/Todo.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-663">
+            <state relative-caret-position="153">
               <caret line="13" column="3" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
               <folding />
             </state>
@@ -168,11 +169,11 @@
         <option value="$PROJECT_DIR$/app/Resources/views/libs/boostrapjs.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/libs/react.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/todo/index.html.twig" />
-        <option value="$PROJECT_DIR$/web/css/todoEditor.css" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/TodoController.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Tests/Controller/TodoControllerTest.php" />
         <option value="$PROJECT_DIR$/web/js/jcumines.js" />
+        <option value="$PROJECT_DIR$/web/css/todoEditor.css" />
         <option value="$PROJECT_DIR$/web/js/todo.js" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/TodoController.php" />
       </list>
     </option>
   </component>
@@ -217,8 +218,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -541,6 +540,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -697,7 +698,8 @@
       <workItem from="1475235647191" duration="1665000" />
       <workItem from="1475278840345" duration="15908000" />
       <workItem from="1475305043502" duration="19234000" />
-      <workItem from="1475370106182" duration="50918000" />
+      <workItem from="1475370106182" duration="53174000" />
+      <workItem from="1475433364136" duration="246000" />
     </task>
     <task id="LOCAL-00001" summary="TodoController started inc test and supporting settings">
       <created>1475322841650</created>
@@ -734,7 +736,14 @@
       <option name="project" value="LOCAL" />
       <updated>1475397174207</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Todo create and delete feature implementations">
+      <created>1475431016134</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1475431016134</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -770,7 +779,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="91357000" />
+    <option name="totallyTimeSpent" value="93859000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -785,26 +794,26 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23507462" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23773988" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2936078" sideWeight="0.5021322" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26760563" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2426869" sideWeight="0.4978678" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2426869" sideWeight="0.4978678" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3997833" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26760563" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3997833" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -827,7 +836,8 @@
     <MESSAGE value="DefaultController template started, and FOSUB styled/linked" />
     <MESSAGE value="my boilerplate + react.html.twig" />
     <MESSAGE value="SavePoint: react started" />
-    <option name="LAST_COMMIT_MESSAGE" value="SavePoint: react started" />
+    <MESSAGE value="Todo create and delete feature implementations" />
+    <option name="LAST_COMMIT_MESSAGE" value="Todo create and delete feature implementations" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -847,7 +857,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="25" column="50" selection-start-line="25" selection-start-column="50" selection-end-line="25" selection-end-column="50" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -891,7 +900,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="52" column="23" selection-start-line="52" selection-start-column="23" selection-end-line="52" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -906,7 +914,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="20" column="49" selection-start-line="20" selection-start-column="49" selection-end-line="20" selection-end-column="49" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -937,7 +944,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
           <caret line="54" column="25" selection-start-line="54" selection-start-column="25" selection-end-line="54" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -953,7 +959,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="42" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -987,7 +992,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="243">
           <caret line="1056" column="5" selection-start-line="1056" selection-start-column="5" selection-end-line="1056" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -995,7 +999,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="156">
           <caret line="253" column="6" selection-start-line="253" selection-start-column="6" selection-end-line="253" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1003,7 +1006,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1019,7 +1021,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="113">
           <caret line="62" column="19" selection-start-line="62" selection-start-column="19" selection-end-line="62" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1034,14 +1035,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/TodoFrontendController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="11" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/TodoFrontendController.php" />
     <entry file="file://$PROJECT_DIR$/src/AppBundle/ControllerTemplates/JSONController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-457">
@@ -1056,7 +1050,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="15" column="10" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1064,7 +1057,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1072,7 +1064,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="579">
           <caret line="1952" column="19" selection-start-line="1951" selection-start-column="0" selection-end-line="1952" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1080,7 +1071,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
           <caret line="26" column="89" selection-start-line="26" selection-start-column="89" selection-end-line="26" selection-end-column="89" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1096,7 +1086,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
           <caret line="33" column="60" selection-start-line="33" selection-start-column="60" selection-end-line="33" selection-end-column="60" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1120,9 +1109,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-391">
           <caret line="19" column="37" selection-start-line="19" selection-start-column="37" selection-end-line="19" selection-end-column="37" />
-          <folding>
-            <element signature="e#12#26#0#Twig" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1130,7 +1116,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1138,7 +1123,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="63" selection-start-line="11" selection-start-column="63" selection-end-line="11" selection-end-column="63" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1146,7 +1130,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
           <caret line="5" column="5002" selection-start-line="5" selection-start-column="5002" selection-end-line="5" selection-end-column="5002" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1157,7 +1140,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="0" column="2047" selection-start-line="0" selection-start-column="2047" selection-end-line="0" selection-end-column="2047" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1165,7 +1147,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="79" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1177,14 +1158,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/boilerplate.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/boilerplate.js" />
     <entry file="file://$PROJECT_DIR$/app/Resources/views/libs/react.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -1203,41 +1177,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Document/Todo.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-663">
+        <state relative-caret-position="153">
           <caret line="13" column="3" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Tests/Controller/TodoControllerTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="381">
-          <caret line="92" column="48" selection-start-line="92" selection-start-column="48" selection-end-line="92" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/TodoController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-          <folding>
-            <element signature="e#210#259#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/css/todoEditor.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="767">
-          <caret line="51" column="22" selection-start-line="51" selection-start-column="22" selection-end-line="51" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/js/jcumines.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
+        <state relative-caret-position="6817">
           <caret line="403" column="0" selection-start-line="403" selection-start-column="0" selection-end-line="403" selection-end-column="15" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
@@ -1245,12 +1193,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Tests/Controller/TodoControllerTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1547">
+          <caret line="92" column="48" selection-start-line="92" selection-start-column="48" selection-end-line="92" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/css/todoEditor.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="850">
+          <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/js/todo.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-808">
-          <caret line="247" column="60" selection-start-line="247" selection-start-column="60" selection-end-line="247" selection-end-column="60" />
+        <state relative-caret-position="5083">
+          <caret line="303" column="42" selection-start-line="303" selection-start-column="42" selection-end-line="303" selection-end-column="42" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/TodoController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="428">
+          <caret line="220" column="36" selection-start-line="220" selection-start-column="36" selection-end-line="220" selection-end-column="36" />
+          <folding>
+            <element signature="e#210#259#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -60,26 +60,26 @@ class Todo extends React.Component {
 
     render() {
         var completedButton = (
-            <span onClick={this.toggleCompleted} className="input-group-addon">
+            <span onClick={this.toggleCompleted} className="input-group-addon makePointer">
                 TODO
             </span>
         );
         if (this.props.completed) {
             completedButton = (
-                <span onClick={this.toggleCompleted} className="input-group-addon">
+                <span onClick={this.toggleCompleted} className="input-group-addon makePointer">
                     DONE
                 </span>
             );
         }
         var title = (
-            <span className="list-group-item todoTitle" onDoubleClick={this.startEditing}>
+            <span className="list-group-item todoTitle makePointer" onDoubleClick={this.startEditing}>
                 {this.props.title}
             </span>
         );
         if (this.state.editing) {
             title = (
                 <input onBlur={this.stopEditing} onChange={this.onEdit} onKeyPress={this.onEditKeyPress}
-                       type="text" className="form-control" value={this.state.newTitle}/>
+                       type="text" className="form-control todoTitle greyedBackground" value={this.state.newTitle}/>
             );
         }
         //<div class="input-group-btn" />
@@ -269,7 +269,49 @@ var TodoBox = React.createClass({
             var ind = this.getIndexOfTodo(id);
             if (ind != null) {
                 console.log('updating ' + this.state.data[ind].title);
+                return jcumines.worker('todoWorker', new Promise(function (fulfill, reject) {
 
+                    //Optimistic: toggle it in the data
+                    var todo = origObj.state.data[ind];
+                    var data = origObj.state.data.concat([]);
+                    var toPut = {};
+                    if (title != null) {
+                        data[ind].title = title;
+                        toPut.title = title;
+                    }
+                    if (completed != null) {
+                        data[ind].completed = completed;
+                        toPut.completed = completed;
+                    }
+                    origObj.setState({data: data});
+                    toPut = JSON.stringify(toPut);
+
+                    if (todo == null || todo._id == null) {
+                        fulfill(true);
+                        return;
+                    }
+                    var itemUrl = origObj.props.url + '/' + todo._id;
+                    //console.log(itemUrl);
+                    $.ajax({
+                        url: itemUrl,
+                        dataType: 'json',
+                        data: toPut,
+                        type: "PUT",
+                        cache: false,
+                        success: function (result) {
+                            fulfill(result);
+                        }.bind(origObj),
+                        error: function (xhr, status, err) {
+                            console.error(origObj.props.url, status, err.toString());
+                            console.dir(xhr);
+                            fulfill(err);
+                        }.bind(origObj)
+                    });
+                })).then(function (r) {
+                    if (jcumines.worker('todoWorker') <= 0) {
+                        return jcumines.worker('todoWorker', origObj.loadTodosFromServer());
+                    }
+                });
             }
         }
         return Promise.resolve(true);

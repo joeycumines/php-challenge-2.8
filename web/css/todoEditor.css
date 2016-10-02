@@ -32,6 +32,7 @@ Set the header size.
 #contentTitle > h1 {
     font-size: 2em;
 }
+
 /*
 md up
 */
@@ -50,4 +51,12 @@ contentWidget styles
 
 .todoTitle {
     padding-left: 50px;
+}
+
+.makePointer {
+    cursor: pointer;
+}
+
+.greyedBackground {
+    background-color : #d1d1d1;
 }
