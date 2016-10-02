@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% block pageMeta %}
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {% endblock %}
+    {% block pageTitle %}
+        <title>A simple todo app in Symfony 2.8 by Joseph Cumines</title>
+    {% endblock %}
+    {{ include('libs/bootstrapcss.html.twig') }}
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/todoEditor.css') }}">
+</head>
+<body>
+<div class="container">
+    <div id="contentTitleFOSUserBundle">
+        <h2 class="hit-the-floor">A Simple Todo App</h2>
+    </div>
+    <div>
+        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+            <div>
+                <span class="lead">Logged in as {{ app.user.username }}</span><br>
+                <span><a href="{{ path('homepage') }}">Go to Todo</a></span><br>
+                <span><a href="{{ path('fos_user_security_logout') }}">Logout</a></span>
+            </div>
+        {% else %}
+            <a href="{{ path('fos_user_registration_register') }}">Click Here to REGISTER</a>
+        {% endif %}
+    </div>
+
+    {% for type, messages in app.session.flashBag.all %}
+        {% for message in messages %}
+            <div class="{{ type }}">
+                {{ message|trans({}, 'FOSUserBundle') }}
+            </div>
+        {% endfor %}
+    {% endfor %}
+
+    <div>
+        {% block fos_user_content %}
+        {% endblock fos_user_content %}
+    </div>
+    {% block pageJSLibs %}
+        {{ include('libs/boostrapjs.html.twig') }}
+    {% endblock %}
+</div>
+</body>
+</html>
