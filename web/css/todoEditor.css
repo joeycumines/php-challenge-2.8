@@ -46,6 +46,8 @@ contentWidget styles
 */
 
 #contentWidget {
-    min-width: 150%;
-    min-height: 150%;
+}
+
+.todoTitle {
+    padding-left: 50px;
 }
