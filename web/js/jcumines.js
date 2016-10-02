@@ -398,20 +398,42 @@ jcumines._workers = {};
 /**
  One worker at a time tool. Returns a promise
  containing input's value.
+
+ If no input is passed, then it will return the queued workers.
  */
 jcumines.worker = function (key, input) {
+    //Initialize the worker if necessary
     if (jcumines._workers[key] == null) {
-        var temp = Promise.resolve(input);
-        jcumines._workers[key] = temp.then(function (r) {
-            //clear worker
-            jcumines._workers[key] = null;
-        });
-        return temp;
+        jcumines._workers[key] = [];
     }
-    //jcumines._worker isnt null.
-    return jcumines._workers[key].then(function (r) {
-        return jcumines.worker(input);
+
+    if (input == null)
+        return jcumines._workers[key].length;
+
+    var at = Promise.resolve(true);
+    if (jcumines._workers[key].length > 0)
+        at = jcumines._workers[key][jcumines._workers[key].length - 1];
+
+    //Queue the operation behind the worker
+    var result = at.then(function (r) {
+        return Promise.resolve(input);
     });
+
+    //Add this operation to the array
+    jcumines._workers[key].push(result);
+
+    //Make result self clearing (items are removed as they complete)
+    result.then(function(r){
+        for(var x = 0; x < jcumines._workers[key].length; x++){
+            if (jcumines._workers[key][x] == result){
+                jcumines._workers[key].splice(0, 1);
+                x--;
+            }
+        }
+    });
+
+    //Return the operation as well
+    return result;
 };
 
 /**
