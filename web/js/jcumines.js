@@ -419,18 +419,26 @@ jcumines.worker = function (key, input) {
         return Promise.resolve(input);
     });
 
-    //Add this operation to the array
-    jcumines._workers[key].push(result);
-
-    //Make result self clearing (items are removed as they complete)
-    result.then(function(r){
+    //Create a catching and self removing worker from our result.
+    var worker = result['catch'](function(err){
+        //We just return the error (fulfills) because we dont want to kill it
+        return err;
+    }).then(function(r){
+        //remove the worker from the array if it exists (it should
+        var removed = false;
         for(var x = 0; x < jcumines._workers[key].length; x++){
-            if (jcumines._workers[key][x] == result){
+            if (jcumines._workers[key][x] == worker){
                 jcumines._workers[key].splice(0, 1);
                 x--;
+                removed = true;
             }
         }
+        if (!removed)
+            throw new Error('We couldnt self remove a promise in worker queue '+key);
     });
+
+    //add the worker to the end
+    jcumines._workers[key].push(worker);
 
     //Return the operation as well
     return result;
