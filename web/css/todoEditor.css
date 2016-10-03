@@ -60,3 +60,12 @@ contentWidget styles
 .greyedBackground {
     background-color : #d1d1d1;
 }
+
+.uncompletedTodo {
+    font-weight: bold;
+    background-color: beige;
+}
+
+.toggleButton {
+
+}

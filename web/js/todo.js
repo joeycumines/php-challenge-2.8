@@ -21,6 +21,7 @@ class Todo extends React.Component {
         this.stopEditing = this.stopEditing.bind(this);
         this.onEdit = this.onEdit.bind(this);
         this.onEditKeyPress = this.onEditKeyPress.bind(this);
+        this.onDelete = this.onDelete.bind(this);
     }
 
     onEditKeyPress(e) {
@@ -58,9 +59,13 @@ class Todo extends React.Component {
         this.setState({newTitle: event.target.value});
     }
 
+    onDelete(event) {
+        this.props.deleteTodo();
+    }
+
     render() {
         var completedButton = (
-            <span onClick={this.toggleCompleted} className="input-group-addon makePointer">
+            <span onClick={this.toggleCompleted} className="input-group-addon makePointer uncompletedTodo">
                 TODO
             </span>
         );
@@ -91,7 +96,7 @@ class Todo extends React.Component {
                     {title}
                 </div>
                 <div className="input-group-btn">
-                    <button type="button" className="btn btn-warning" onClick={this.props.deleteTodo}>
+                    <button type="button" className="btn btn-warning" onClick={this.onDelete}>
                         X
                     </button>
                 </div>
@@ -146,13 +151,19 @@ var TodoForm = React.createClass({
         return (
             <form className="todoForm" onSubmit={this.handleSubmit}>
                 <div className="form-group">
-                    <input
-                        type="text"
-                        placeholder="To add a task type a name then press enter"
-                        value={this.state.title}
-                        onChange={this.handleTitleChange}
-                        className="form-control"
-                    />
+                    <div className="input-group">
+                        <span className="input-group-btn">
+                            <button className="btn btn-secondary toggleButton" onClick={this.props.toggleAll}
+                                    type="button">Toggle All</button>
+                        </span>
+                        <input
+                            type="text"
+                            placeholder="To add a task type a name then press enter"
+                            value={this.state.title}
+                            onChange={this.handleTitleChange}
+                            className="form-control"
+                        />
+                    </div>
                 </div>
             </form>
         );
@@ -357,10 +368,34 @@ var TodoBox = React.createClass({
         }
         return Promise.resolve(true);
     },
+    toggleAll : function(){
+        var anyIncomplete = false;
+        for (var x = 0; x < this.state.data.length; x++){
+            if (!this.state.data[x].completed){
+                anyIncomplete = true;
+                break;
+            }
+        }
+        if (anyIncomplete){
+            //make all completed
+            for (var x = 0; x < this.state.data.length; x++){
+                if (!this.state.data[x].completed){
+                    this.updateTodo(this.state.data[x]._id, null, true);
+                }
+            }
+        } else {
+            //make all incomplete
+            for (var x = 0; x < this.state.data.length; x++){
+                if (this.state.data[x].completed){
+                    this.updateTodo(this.state.data[x]._id, null, false);
+                }
+            }
+        }
+    },
     render: function () {
         return (
             <div className="todoBox">
-                <TodoForm onTaskSubmit={this.handleTodoSubmit}/>
+                <TodoForm onTaskSubmit={this.handleTodoSubmit} toggleAll={this.toggleAll}/>
                 <TodoList data={this.state.data} deleteTodo={this.deleteTodo} updateTodo={this.updateTodo}/>
             </div>
         );
