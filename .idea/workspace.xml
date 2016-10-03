@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a8bc9f2e-7237-4257-be62-a4ed8a4ecf58" name="Default" comment="">
+    <list default="true" id="a8bc9f2e-7237-4257-be62-a4ed8a4ecf58" name="Default" comment="Hopefully final fix of broken logic in jcumines.worker">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/todo.js" afterPath="$PROJECT_DIR$/web/js/todo.js" />
     </list>
@@ -57,8 +57,8 @@
       <file leaf-file-name="jcumines.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/js/jcumines.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-187">
-              <caret line="403" column="0" selection-start-line="403" selection-start-column="0" selection-end-line="403" selection-end-column="15" />
+            <state relative-caret-position="391">
+              <caret line="443" column="18" selection-start-line="443" selection-start-column="18" selection-end-line="443" selection-end-column="18" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -79,8 +79,8 @@
       <file leaf-file-name="todo.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/js/todo.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="363">
-              <caret line="270" column="11" selection-start-line="270" selection-start-column="11" selection-end-line="270" selection-end-column="11" />
+            <state relative-caret-position="244">
+              <caret line="269" column="41" selection-start-line="269" selection-start-column="41" selection-end-line="269" selection-end-column="41" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -168,12 +168,12 @@
         <option value="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/layout.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/libs/boostrapjs.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/libs/react.html.twig" />
-        <option value="$PROJECT_DIR$/web/js/jcumines.js" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/TodoController.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Tests/Controller/TodoControllerTest.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Document/Todo.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/todo/index.html.twig" />
         <option value="$PROJECT_DIR$/web/css/todoEditor.css" />
+        <option value="$PROJECT_DIR$/web/js/jcumines.js" />
         <option value="$PROJECT_DIR$/web/js/todo.js" />
       </list>
     </option>
@@ -701,7 +701,7 @@
       <workItem from="1475305043502" duration="19234000" />
       <workItem from="1475370106182" duration="53174000" />
       <workItem from="1475433364136" duration="1115000" />
-      <workItem from="1475459362844" duration="5325000" />
+      <workItem from="1475459362844" duration="6343000" />
     </task>
     <task id="LOCAL-00001" summary="TodoController started inc test and supporting settings">
       <created>1475322841650</created>
@@ -794,7 +794,21 @@
       <option name="project" value="LOCAL" />
       <updated>1475464258230</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="quality of life fixes 2&#10;">
+      <created>1475464703307</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1475464703307</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Hopefully final fix of broken logic in jcumines.worker">
+      <created>1475465549349</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1475465549349</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -830,7 +844,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="100053000" />
+    <option name="totallyTimeSpent" value="101071000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -895,7 +909,9 @@
     <MESSAGE value="Toggle all button" />
     <MESSAGE value="Strikethrough on completed" />
     <MESSAGE value="quality of life fixes 1&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="quality of life fixes 1&#10;" />
+    <MESSAGE value="quality of life fixes 2&#10;" />
+    <MESSAGE value="Hopefully final fix of broken logic in jcumines.worker" />
+    <option name="LAST_COMMIT_MESSAGE" value="Hopefully final fix of broken logic in jcumines.worker" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1269,16 +1285,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/jcumines.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-187">
-          <caret line="403" column="0" selection-start-line="403" selection-start-column="0" selection-end-line="403" selection-end-column="15" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/css/todoEditor.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="495">
@@ -1287,10 +1293,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/jcumines.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="443" column="18" selection-start-line="443" selection-start-column="18" selection-end-line="443" selection-end-column="18" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/js/todo.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="270" column="11" selection-start-line="270" selection-start-column="11" selection-end-line="270" selection-end-column="11" />
+        <state relative-caret-position="244">
+          <caret line="269" column="41" selection-start-line="269" selection-start-column="41" selection-end-line="269" selection-end-column="41" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>

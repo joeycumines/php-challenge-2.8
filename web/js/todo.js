@@ -179,6 +179,10 @@ var TodoForm = React.createClass({
 
 
 var TodoBox = React.createClass({
+    /**
+     * Doesnt need to wait for the worker, but wont update anything if there are any workers.
+     * @returns {Promise}
+     */
     loadTodosFromServer: function () {
         var origObj = this;
 
@@ -188,8 +192,18 @@ var TodoBox = React.createClass({
                 dataType: 'json',
                 cache: false,
                 success: function (data) {
-                    if (!jcumines.isArray(data))
+                    if (!jcumines.isArray(data)) {
                         reject(new Error('Data was not an array.'));
+                        return false;
+                    }
+
+                    //If we are still updating anything in addition to this then we exit, dont want popping in
+                    if (jcumines.worker('todoWorker') > 0){
+                        console.log('We avoided setting the state from the server while operations were running.');
+                        fulfill(false);
+                        return false;
+                    }
+
                     //Set our state
                     origObj.setState({data: data});
                     fulfill(data);
@@ -205,19 +219,10 @@ var TodoBox = React.createClass({
         //We need to make a copy of this that we can access later
         var origObj = this;
 
-        //Exit if we have items in the work queue
-        if (jcumines.worker('todoWorker') > 0) {
-            console.log('Avoiding starting a reload while operating...');
-            return jcumines.wait(1000).then(function (r) {
-                return origObj.loadTodosThenWaitLoop();
-            });
-        }
-
-
-        return jcumines.worker('todoWorker', this.loadTodosFromServer()['catch'](function (err) {
+        return this.loadTodosFromServer()['catch'](function (err) {
             //Error ignored
             return err;
-        })).then(function (r) {
+        }).then(function (r) {
             //wait this.props.pollInterval
             //console.dir(r);
             return jcumines.wait(origObj.props.pollInterval);
