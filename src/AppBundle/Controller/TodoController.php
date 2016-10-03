@@ -99,7 +99,8 @@ class TodoController extends JSONController
      *
      *
      */
-    public function postTodoAction(Request $request){
+    public function postTodoAction(Request $request)
+    {
         $body = null;
         try {
             $body = $this->bodyAsJSON($request);
@@ -107,7 +108,7 @@ class TodoController extends JSONController
             if (!isset($body['title']) || !is_string($body['title']))
                 throw new JSONControllerException("Required parameter 'title' was unset or not a string value.");
         } catch (JSONControllerException $e) {
-            return new JsonResponse(''.$e, 400);
+            return new JsonResponse('' . $e, 400);
         }
         //$body isnt null and title is set
 
@@ -119,7 +120,7 @@ class TodoController extends JSONController
         $this->dm()->persist($todo);
         $this->dm()->flush();
 
-        return new JsonResponse(''.$todo->getId());
+        return new JsonResponse('' . $todo->getId());
     }
 
     /**
@@ -157,7 +158,8 @@ class TodoController extends JSONController
      * @param Request $request
      * @return JsonResponse
      */
-    public function deleteTodoIdAction($id, Request $request){
+    public function deleteTodoIdAction($id, Request $request)
+    {
         $item = $this->get('doctrine_mongodb')
             ->getRepository('AppBundle:Todo')
             ->find($id);
@@ -185,7 +187,8 @@ class TodoController extends JSONController
      * @param Request $request
      * @return JsonResponse
      */
-    public function putTodoIdAction($id, Request $request){
+    public function putTodoIdAction($id, Request $request)
+    {
         $item = $this->get('doctrine_mongodb')
             ->getRepository('AppBundle:Todo')
             ->find($id);
@@ -205,34 +208,35 @@ class TodoController extends JSONController
         } catch (JSONControllerException $e) {
             return new JsonResponse('' . $e, 400);
         }
+
         $title = null;
         $completed = null;
-        if (isset($body['title'])) {
-            if (is_string($body['title']))
-                $title = $body['title'];
-            else
-                return new JsonResponse('Bad Request: The body parameter "title" was not type "string".', 400);
-        }
-        if (isset($body['completed'])) {
-            if (is_bool($body['completed']))
-                $completed = $body['completed'];
-            else
-                return new JsonResponse('Bad Request: The body parameter "completed" was not type "boolean".', 400);
-        }
 
-        if ($title == null && $completed == null)
-            return new JsonResponse('Bad Request: You must set the body param "title" and/or "completed".', 400);
+        foreach ($body as $key => $value) {
+            if ($key == 'title') {
+                if (is_string($value)) {
+                    $title = $value;
+                    $item->setTitle($title);
+                } else
+                    return new JsonResponse('Bad Request: The body parameter "title" was not type "string".', 400);
 
-        //Actually set the values
-        $item->set($title, $completed);
+            } else if ($key == 'completed') {
+                if (is_bool($value) || is_int($value)) {
+                    $completed = ($value === true || $value === 1);
+                    $item->setCompleted($completed);
+                } else
+                    return new JsonResponse('Bad Request: The body parameter "completed" was not type "bool".', 400);
+            }
+        }
 
         $this->dm()->flush();
 
         if ($title == null)
-            return new JsonResponse('Successfully set "completed" to ' . $completed . '.');
+            return new JsonResponse('Successfully set "completed" to ' . ($completed ? 'true' : 'false') . '.');
         if ($completed == null)
             return new JsonResponse('Successfully set "title" to "' . $title . '".');
 
-        return new JsonResponse('Successfully set "title" to "' . $title . '" and "completed" to ' . $completed . '.');
+        return new JsonResponse('Successfully set "title" to "' . $title . '" and "completed" to '
+            . ($completed ? 'true' : 'false') . '.');
     }
 }

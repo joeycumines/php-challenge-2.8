@@ -220,6 +220,23 @@ class TodoControllerTest extends WebTestCase
         $this->assertEquals(false, $item['completed']);
         $this->assertEquals('Todo Test 3', $item['title']);
 
+        //Try to set the completed value of $id1 to false
+        $body = array();
+        $body['completed'] = false;
+        $crawler = $client->request('PUT', '/todo/' . $id1, array(), array(), array(), json_encode($body));
+        echo $client->getResponse();
+        echo("\n\n");
+        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+
+        $crawler = $client->request('GET', '/todo/' . $id1);
+        echo $client->getResponse();
+        echo("\n\n");
+        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+        $item = $this->responseAsJSON($client);
+        $this->assertEquals($id1, $item['_id']);
+        $this->assertEquals(false, $item['completed']);
+        $this->assertEquals('New Title', $item['title']);
+
         //Delete them all
         $crawler = $client->request('DELETE', '/todo');
         echo $client->getResponse();
