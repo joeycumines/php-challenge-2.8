@@ -487,7 +487,7 @@ var TodoBox = React.createClass({
 });
 
 ReactDOM.render(
-    <TodoBox url="/todo" pollInterval={10000}/>
+    <TodoBox url="/todo" pollInterval={2000}/>
     ,
     document.getElementById('contentWidget')
 );

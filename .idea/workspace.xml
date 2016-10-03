@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a8bc9f2e-7237-4257-be62-a4ed8a4ecf58" name="Default" comment="Hopefully final fix of broken logic in jcumines.worker">
+    <list default="true" id="a8bc9f2e-7237-4257-be62-a4ed8a4ecf58" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/todo.js" afterPath="$PROJECT_DIR$/web/js/todo.js" />
     </list>
@@ -79,8 +79,8 @@
       <file leaf-file-name="todo.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/js/todo.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="244">
-              <caret line="269" column="41" selection-start-line="269" selection-start-column="41" selection-end-line="269" selection-end-column="41" />
+            <state relative-caret-position="518">
+              <caret line="489" column="43" selection-start-line="489" selection-start-column="43" selection-end-line="489" selection-end-column="43" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -701,7 +701,7 @@
       <workItem from="1475305043502" duration="19234000" />
       <workItem from="1475370106182" duration="53174000" />
       <workItem from="1475433364136" duration="1115000" />
-      <workItem from="1475459362844" duration="6343000" />
+      <workItem from="1475459362844" duration="6503000" />
     </task>
     <task id="LOCAL-00001" summary="TodoController started inc test and supporting settings">
       <created>1475322841650</created>
@@ -808,7 +808,14 @@
       <option name="project" value="LOCAL" />
       <updated>1475465549349</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="That should be the final worker state logic fix">
+      <created>1475465729874</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1475465729874</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -844,7 +851,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="101071000" />
+    <option name="totallyTimeSpent" value="101231000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -911,7 +918,8 @@
     <MESSAGE value="quality of life fixes 1&#10;" />
     <MESSAGE value="quality of life fixes 2&#10;" />
     <MESSAGE value="Hopefully final fix of broken logic in jcumines.worker" />
-    <option name="LAST_COMMIT_MESSAGE" value="Hopefully final fix of broken logic in jcumines.worker" />
+    <MESSAGE value="That should be the final worker state logic fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="That should be the final worker state logic fix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1305,8 +1313,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/js/todo.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="269" column="41" selection-start-line="269" selection-start-column="41" selection-end-line="269" selection-end-column="41" />
+        <state relative-caret-position="518">
+          <caret line="489" column="43" selection-start-line="489" selection-start-column="43" selection-end-line="489" selection-end-column="43" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
