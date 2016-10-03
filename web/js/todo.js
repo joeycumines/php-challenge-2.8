@@ -100,7 +100,7 @@ class Todo extends React.Component {
         );
     }
 }
-var testButton = 0;
+
 var TodoList = React.createClass({
     render: function () {
         //Render dynamically

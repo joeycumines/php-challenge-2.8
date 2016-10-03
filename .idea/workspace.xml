@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a8bc9f2e-7237-4257-be62-a4ed8a4ecf58" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Document/Todo.php" afterPath="$PROJECT_DIR$/src/AppBundle/Document/Todo.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/todo.js" afterPath="$PROJECT_DIR$/web/js/todo.js" />
     </list>
     <ignored path="php-challenge-2.8.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -76,11 +76,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="todo.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="todo.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/js/todo.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5083">
-              <caret line="303" column="42" selection-start-line="303" selection-start-column="42" selection-end-line="303" selection-end-column="42" />
+            <state relative-caret-position="-4038">
+              <caret line="102" column="0" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -103,11 +103,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TodoControllerTest.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TodoControllerTest.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Tests/Controller/TodoControllerTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="472">
-              <caret line="231" column="36" selection-start-line="231" selection-start-column="36" selection-end-line="231" selection-end-column="36" />
+            <state relative-caret-position="325">
+              <caret line="220" column="59" selection-start-line="220" selection-start-column="59" selection-end-line="220" selection-end-column="59" />
               <folding />
             </state>
           </provider>
@@ -171,10 +171,10 @@
         <option value="$PROJECT_DIR$/app/Resources/views/todo/index.html.twig" />
         <option value="$PROJECT_DIR$/web/js/jcumines.js" />
         <option value="$PROJECT_DIR$/web/css/todoEditor.css" />
-        <option value="$PROJECT_DIR$/web/js/todo.js" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/TodoController.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Tests/Controller/TodoControllerTest.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Document/Todo.php" />
+        <option value="$PROJECT_DIR$/web/js/todo.js" />
       </list>
     </option>
   </component>
@@ -701,7 +701,7 @@
       <workItem from="1475305043502" duration="19234000" />
       <workItem from="1475370106182" duration="53174000" />
       <workItem from="1475433364136" duration="1115000" />
-      <workItem from="1475459362844" duration="1170000" />
+      <workItem from="1475459362844" duration="1281000" />
     </task>
     <task id="LOCAL-00001" summary="TodoController started inc test and supporting settings">
       <created>1475322841650</created>
@@ -759,7 +759,14 @@
       <option name="project" value="LOCAL" />
       <updated>1475460507659</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Remove now redundant method">
+      <created>1475460548472</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1475460548472</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -795,7 +802,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="95898000" />
+    <option name="totallyTimeSpent" value="96009000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -816,9 +823,9 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2936078" sideWeight="0.5021322" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37486458" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37486458" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2426869" sideWeight="0.4978678" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2426869" sideWeight="0.4978678" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3997833" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -855,7 +862,8 @@
     <MESSAGE value="Todo create and delete feature implementations" />
     <MESSAGE value="Polishing existing features" />
     <MESSAGE value="Fixed completed bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed completed bug" />
+    <MESSAGE value="Remove now redundant method" />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove now redundant method" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1208,16 +1216,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/todo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5083">
-          <caret line="303" column="42" selection-start-line="303" selection-start-column="42" selection-end-line="303" selection-end-column="42" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/TodoController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="829">
@@ -1241,9 +1239,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Tests/Controller/TodoControllerTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="472">
-          <caret line="231" column="36" selection-start-line="231" selection-start-column="36" selection-end-line="231" selection-end-column="36" />
+        <state relative-caret-position="325">
+          <caret line="220" column="59" selection-start-line="220" selection-start-column="59" selection-end-line="220" selection-end-column="59" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/todo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4038">
+          <caret line="102" column="0" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
