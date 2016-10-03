@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a8bc9f2e-7237-4257-be62-a4ed8a4ecf58" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/todoEditor.css" afterPath="$PROJECT_DIR$/web/css/todoEditor.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/todo.js" afterPath="$PROJECT_DIR$/web/js/todo.js" />
     </list>
     <ignored path="php-challenge-2.8.iws" />
@@ -80,8 +79,8 @@
       <file leaf-file-name="todo.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/js/todo.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="501">
-              <caret line="388" column="50" selection-start-line="388" selection-start-column="50" selection-end-line="388" selection-end-column="50" />
+            <state relative-caret-position="408">
+              <caret line="78" column="6" selection-start-line="78" selection-start-column="6" selection-end-line="78" selection-end-column="6" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -702,7 +701,7 @@
       <workItem from="1475305043502" duration="19234000" />
       <workItem from="1475370106182" duration="53174000" />
       <workItem from="1475433364136" duration="1115000" />
-      <workItem from="1475459362844" duration="2925000" />
+      <workItem from="1475459362844" duration="3314000" />
     </task>
     <task id="LOCAL-00001" summary="TodoController started inc test and supporting settings">
       <created>1475322841650</created>
@@ -774,7 +773,14 @@
       <option name="project" value="LOCAL" />
       <updated>1475460675386</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Toggle all button">
+      <created>1475462303080</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1475462303080</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -810,7 +816,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="97653000" />
+    <option name="totallyTimeSpent" value="98042000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -872,7 +878,8 @@
     <MESSAGE value="Fixed completed bug" />
     <MESSAGE value="Remove now redundant method" />
     <MESSAGE value="Stray global var declaration&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Stray global var declaration&#10;" />
+    <MESSAGE value="Toggle all button" />
+    <option name="LAST_COMMIT_MESSAGE" value="Toggle all button" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1266,8 +1273,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/js/todo.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="501">
-          <caret line="388" column="50" selection-start-line="388" selection-start-column="50" selection-end-line="388" selection-end-column="50" />
+        <state relative-caret-position="408">
+          <caret line="78" column="6" selection-start-line="78" selection-start-column="6" selection-end-line="78" selection-end-column="6" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>

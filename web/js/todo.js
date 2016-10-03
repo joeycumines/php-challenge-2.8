@@ -81,6 +81,13 @@ class Todo extends React.Component {
                 {this.props.title}
             </span>
         );
+        if (this.props.completed) {
+            title = (
+                <span className="list-group-item todoTitle makePointer" onDoubleClick={this.startEditing}>
+                    <s>{this.props.title}</s>
+                </span>
+            );
+        }
         if (this.state.editing) {
             title = (
                 <input onBlur={this.stopEditing} onChange={this.onEdit} onKeyPress={this.onEditKeyPress}
@@ -368,25 +375,25 @@ var TodoBox = React.createClass({
         }
         return Promise.resolve(true);
     },
-    toggleAll : function(){
+    toggleAll: function () {
         var anyIncomplete = false;
-        for (var x = 0; x < this.state.data.length; x++){
-            if (!this.state.data[x].completed){
+        for (var x = 0; x < this.state.data.length; x++) {
+            if (!this.state.data[x].completed) {
                 anyIncomplete = true;
                 break;
             }
         }
-        if (anyIncomplete){
+        if (anyIncomplete) {
             //make all completed
-            for (var x = 0; x < this.state.data.length; x++){
-                if (!this.state.data[x].completed){
+            for (var x = 0; x < this.state.data.length; x++) {
+                if (!this.state.data[x].completed) {
                     this.updateTodo(this.state.data[x]._id, null, true);
                 }
             }
         } else {
             //make all incomplete
-            for (var x = 0; x < this.state.data.length; x++){
-                if (this.state.data[x].completed){
+            for (var x = 0; x < this.state.data.length; x++) {
+                if (this.state.data[x].completed) {
                     this.updateTodo(this.state.data[x]._id, null, false);
                 }
             }
