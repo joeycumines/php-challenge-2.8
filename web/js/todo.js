@@ -94,10 +94,24 @@ class Todo extends React.Component {
                        type="text" className="form-control todoTitle greyedBackground" value={this.state.newTitle}/>
             );
         }
+
+        var viewMode = '';
+
+        //Hide if completed and view mode active
+        //hide if not completed and view mode completed
+        if (this.props.completed){
+            if (this.props.viewMode == 1)
+                viewMode = 'noItems';
+        } else {
+            if (this.props.viewMode == 2)
+                viewMode = 'noItems';
+        }
+
+
         //<div class="input-group-btn" />
         return (
 
-            <div className="input-group">
+            <div className={"input-group "+viewMode}>
                 {completedButton}
                 <div>
                     {title}
@@ -126,7 +140,7 @@ var TodoList = React.createClass({
             }.bind(this);
             return (
                 <Todo title={todo.title} _id={todo._id} completed={todo.completed} deleteTodo={todoDelete}
-                      updateTodo={todoUpdate}/>
+                      updateTodo={todoUpdate} viewMode={this.props.viewMode} />
             );
         }.bind(this));
         return (
@@ -198,7 +212,7 @@ var TodoBox = React.createClass({
                     }
 
                     //If we are still updating anything in addition to this then we exit, dont want popping in
-                    if (jcumines.worker('todoWorker') > 0){
+                    if (jcumines.worker('todoWorker') > 0) {
                         console.log('We avoided setting the state from the server while operations were running.');
                         fulfill(false);
                         return false;
@@ -280,6 +294,7 @@ var TodoBox = React.createClass({
     },
     componentDidMount: function () {
         this.loadTodosThenWaitLoop();
+        this.setState({viewMode: 0});
     },
     getIndexOfTodo: function (id) {
         for (var x = 0; x < this.state.data.length; x++) {
@@ -419,6 +434,15 @@ var TodoBox = React.createClass({
             }
         }
     },
+    viewAll: function(){
+        this.setState({viewMode: 0});
+    },
+    viewActive: function(){
+        this.setState({viewMode: 1});
+    },
+    viewCompleted: function(){
+        this.setState({viewMode: 2});
+    },
     render: function () {
 
         //build the components at the bottom
@@ -439,18 +463,29 @@ var TodoBox = React.createClass({
         );
 
         //Buttons
+
+        var viewAllClass = 'btn-outline-secondary';
+        var viewActiveClass = 'btn-outline-secondary';
+        var viewCompletedClass = 'btn-outline-secondary';
+        if (this.state.viewMode == 1) {
+            viewActiveClass = 'btn-outline-primary';
+        } else if (this.state.viewMode == 2) {
+            viewCompletedClass = 'btn-outline-primary';
+        } else
+            viewAllClass = 'btn-outline-primary';
+
         var viewAll = (
-            <button className="btn btn-outline-secondary btn-sm ">
+            <button onClick={this.viewAll} className={"btn btn-sm " + viewAllClass}>
                 All
             </button>
         );
         var viewActive = (
-            <button className="btn btn-outline-secondary btn-sm">
+            <button onClick={this.viewActive} className={"btn btn-sm " + viewActiveClass}>
                 Active
             </button>
         );
         var viewCompleted = (
-            <button className="btn btn-outline-secondary btn-sm">
+            <button onClick={this.viewCompleted} className={"btn btn-sm " + viewCompletedClass}>
                 Completed
             </button>
         );
@@ -469,7 +504,8 @@ var TodoBox = React.createClass({
         return (
             <div className="todoBox">
                 <TodoForm onTaskSubmit={this.handleTodoSubmit} toggleAll={this.toggleAll}/>
-                <TodoList data={this.state.data} deleteTodo={this.deleteTodo} updateTodo={this.updateTodo}/>
+                <TodoList data={this.state.data} deleteTodo={this.deleteTodo} updateTodo={this.updateTodo}
+                          viewMode={this.state.viewMode}/>
                 <div className={footerToolsClass}>
                     <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4">
                         {howManyLeft}
