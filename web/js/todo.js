@@ -229,21 +229,21 @@ var TodoBox = React.createClass({
     handleTodoSubmit: function (todo) {
         var origObj = this;
 
+        var optimisticData = origObj.state.data.concat([]);
+        var optimisticTodo = {};
+        optimisticTodo._id = null;
+        optimisticTodo.title = todo.title;
+        optimisticTodo.completed = false;
+        var toPost = {};
+        toPost.title = '' + todo.title;
+        toPost = JSON.stringify(toPost);
+
+        //optimistically set the state
+        optimisticData.push(optimisticTodo);
+        origObj.setState({data: optimisticData});
+
         //submit the new data (handling changing the state on error)
         jcumines.worker('todoWorker', new Promise(function (fulfill, reject) {
-
-            var optimisticData = origObj.state.data.concat([]);
-            var optimisticTodo = {};
-            optimisticTodo._id = null;
-            optimisticTodo.title = todo.title;
-            optimisticTodo.completed = false;
-            var toPost = {};
-            toPost.title = '' + todo.title;
-            toPost = JSON.stringify(toPost);
-
-            //optimistically set the state
-            optimisticData.push(optimisticTodo);
-            origObj.setState({data: optimisticData});
 
             $.ajax({
                 url: origObj.props.url,
@@ -264,6 +264,9 @@ var TodoBox = React.createClass({
         })).then(function (r) {
             if (jcumines.worker('todoWorker') <= 0) {
                 return jcumines.worker('todoWorker', origObj.loadTodosFromServer());
+            } else {
+                console.log('avoided reloading from source after update because we were still updating');
+                return false;
             }
         });
     },
@@ -287,27 +290,23 @@ var TodoBox = React.createClass({
             var ind = this.getIndexOfTodo(id);
             if (ind != null) {
                 console.log('updating ' + this.state.data[ind].title);
-                return jcumines.worker('todoWorker', new Promise(function (fulfill, reject) {
-                    ind = origObj.getIndexOfTodo(id);
-                    if (ind == null){
-                        fulfill(true);
-                        return;
-                    }
-                    //Optimistic: toggle it in the data
-                    var todo = origObj.state.data[ind];
-                    var data = origObj.state.data.concat([]);
-                    var toPut = {};
-                    if (title != null) {
-                        data[ind].title = title;
-                        toPut.title = title;
-                    }
-                    if (completed != null) {
-                        data[ind].completed = completed;
-                        toPut.completed = completed;
-                    }
-                    origObj.setState({data: data});
-                    toPut = JSON.stringify(toPut);
 
+                //Optimistic: toggle it in the data
+                var todo = origObj.state.data[ind];
+                var data = origObj.state.data.concat([]);
+                var toPut = {};
+                if (title != null) {
+                    data[ind].title = title;
+                    toPut.title = title;
+                }
+                if (completed != null) {
+                    data[ind].completed = completed;
+                    toPut.completed = completed;
+                }
+                origObj.setState({data: data});
+                toPut = JSON.stringify(toPut);
+
+                return jcumines.worker('todoWorker', new Promise(function (fulfill, reject) {
                     if (todo == null || todo._id == null) {
                         fulfill(true);
                         return;
@@ -332,6 +331,9 @@ var TodoBox = React.createClass({
                 })).then(function (r) {
                     if (jcumines.worker('todoWorker') <= 0) {
                         return jcumines.worker('todoWorker', origObj.loadTodosFromServer());
+                    } else {
+                        console.log('avoided reloading from source after update because we were still updating');
+                        return false;
                     }
                 });
             }
@@ -341,21 +343,14 @@ var TodoBox = React.createClass({
     deleteTodo: function (id) {
         var origObj = this;
         var ind = this.getIndexOfTodo(id);
-
         if (ind != null) {
             console.log('deleting ' + this.state.data[ind].title);
+            //Optimistic: remove it from the state
+            var todo = origObj.state.data[ind];
+            var data = origObj.state.data.concat([]);
+            data.splice(ind, 1);
+            origObj.setState({data: data});
             return jcumines.worker('todoWorker', new Promise(function (fulfill, reject) {
-                ind = origObj.getIndexOfTodo(id);
-                if (ind == null){
-                    fulfill(true);
-                    return;
-                }
-                //Optimistic: remove it from the state
-                var todo = origObj.state.data[ind];
-                var data = origObj.state.data.concat([]);
-                data.splice(ind, 1);
-                origObj.setState({data: data});
-
                 if (todo == null || todo._id == null) {
                     fulfill(true);
                     return;
@@ -378,6 +373,9 @@ var TodoBox = React.createClass({
             })).then(function (r) {
                 if (jcumines.worker('todoWorker') <= 0) {
                     return jcumines.worker('todoWorker', origObj.loadTodosFromServer());
+                } else {
+                    console.log('avoided reloading from source after update because we were still updating');
+                    return false;
                 }
             });
         }
