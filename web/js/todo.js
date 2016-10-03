@@ -521,9 +521,9 @@ var TodoBox = React.createClass({
         );
     }
 });
-
+//var pageUrl = document.location.pathname.match(/[^\/]+$/)[0];
 ReactDOM.render(
-    <TodoBox url="/todo" pollInterval={2000}/>
+    <TodoBox url={"todo"} pollInterval={2000}/>
     ,
     document.getElementById('contentWidget')
 );
