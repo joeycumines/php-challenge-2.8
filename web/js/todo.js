@@ -288,7 +288,11 @@ var TodoBox = React.createClass({
             if (ind != null) {
                 console.log('updating ' + this.state.data[ind].title);
                 return jcumines.worker('todoWorker', new Promise(function (fulfill, reject) {
-
+                    ind = origObj.getIndexOfTodo(id);
+                    if (ind == null){
+                        fulfill(true);
+                        return;
+                    }
                     //Optimistic: toggle it in the data
                     var todo = origObj.state.data[ind];
                     var data = origObj.state.data.concat([]);
@@ -337,11 +341,15 @@ var TodoBox = React.createClass({
     deleteTodo: function (id) {
         var origObj = this;
         var ind = this.getIndexOfTodo(id);
+
         if (ind != null) {
             console.log('deleting ' + this.state.data[ind].title);
-
             return jcumines.worker('todoWorker', new Promise(function (fulfill, reject) {
-
+                ind = origObj.getIndexOfTodo(id);
+                if (ind == null){
+                    fulfill(true);
+                    return;
+                }
                 //Optimistic: remove it from the state
                 var todo = origObj.state.data[ind];
                 var data = origObj.state.data.concat([]);
@@ -377,33 +385,99 @@ var TodoBox = React.createClass({
     },
     toggleAll: function () {
         var anyIncomplete = false;
-        for (var x = 0; x < this.state.data.length; x++) {
-            if (!this.state.data[x].completed) {
+        var data = this.state.data.concat([]);
+        for (var x = 0; x < data.length; x++) {
+            if (!data[x].completed) {
                 anyIncomplete = true;
                 break;
             }
         }
         if (anyIncomplete) {
             //make all completed
-            for (var x = 0; x < this.state.data.length; x++) {
-                if (!this.state.data[x].completed) {
-                    this.updateTodo(this.state.data[x]._id, null, true);
+            for (var x = 0; x < data.length; x++) {
+                if (!data[x].completed) {
+                    this.updateTodo(data[x]._id, null, true);
                 }
             }
         } else {
             //make all incomplete
-            for (var x = 0; x < this.state.data.length; x++) {
-                if (this.state.data[x].completed) {
-                    this.updateTodo(this.state.data[x]._id, null, false);
+            for (var x = 0; x < data.length; x++) {
+                if (data[x].completed) {
+                    this.updateTodo(data[x]._id, null, false);
                 }
             }
         }
     },
+    clearCompleted: function () {
+        var data = this.state.data.concat([]);
+        for (var x = 0; x < data.length; x++) {
+            if (data[x].completed) {
+                this.deleteTodo(data[x]._id);
+            }
+        }
+    },
     render: function () {
+
+        //build the components at the bottom
+        //how many left span
+        var leftCount = 0;
+        for (var x = 0; x < this.state.data.length; x++) {
+            if (!this.state.data[x].completed) {
+                leftCount++;
+            }
+        }
+        var itemsLeftNote = 'items left';
+        if (leftCount == 1)
+            itemsLeftNote = 'item left';
+        var howManyLeft = (
+            <span className="pull-xs-left">
+                {leftCount} {itemsLeftNote}
+            </span>
+        );
+
+        //Buttons
+        var viewAll = (
+            <button className="btn btn-outline-secondary btn-sm ">
+                All
+            </button>
+        );
+        var viewActive = (
+            <button className="btn btn-outline-secondary btn-sm">
+                Active
+            </button>
+        );
+        var viewCompleted = (
+            <button className="btn btn-outline-secondary btn-sm">
+                Completed
+            </button>
+        );
+
+        //Clear completed hyperlink
+        var clearCompleted = (
+            <a href="#" className="pull-xs-right" onClick={this.clearCompleted}>
+                Clear Completed
+            </a>
+        );
+
+        var footerToolsClass = 'row';
+        if (this.state.data.length == 0)
+            footerToolsClass = 'row noItems';
+
         return (
             <div className="todoBox">
                 <TodoForm onTaskSubmit={this.handleTodoSubmit} toggleAll={this.toggleAll}/>
                 <TodoList data={this.state.data} deleteTodo={this.deleteTodo} updateTodo={this.updateTodo}/>
+                <div className={footerToolsClass}>
+                    <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                        {howManyLeft}
+                    </div>
+                    <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                        {viewAll} {viewActive} {viewCompleted}
+                    </div>
+                    <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                        {clearCompleted}
+                    </div>
+                </div>
             </div>
         );
     }

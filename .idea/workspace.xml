@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="a8bc9f2e-7237-4257-be62-a4ed8a4ecf58" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/todo/index.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/todo/index.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/todoEditor.css" afterPath="$PROJECT_DIR$/web/css/todoEditor.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/todo.js" afterPath="$PROJECT_DIR$/web/js/todo.js" />
     </list>
     <ignored path="php-challenge-2.8.iws" />
@@ -47,8 +49,8 @@
       <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/todo/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="21" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+            <state relative-caret-position="578">
+              <caret line="34" column="7" selection-start-line="34" selection-start-column="7" selection-end-line="34" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -57,7 +59,7 @@
       <file leaf-file-name="jcumines.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/js/jcumines.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6817">
+            <state relative-caret-position="-187">
               <caret line="403" column="0" selection-start-line="403" selection-start-column="0" selection-end-line="403" selection-end-column="15" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
@@ -69,8 +71,8 @@
       <file leaf-file-name="todoEditor.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/css/todoEditor.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="121">
-              <caret line="46" column="2" selection-start-line="46" selection-start-column="2" selection-end-line="46" selection-end-column="2" />
+            <state relative-caret-position="495">
+              <caret line="72" column="8" selection-start-line="72" selection-start-column="1" selection-end-line="72" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -79,8 +81,8 @@
       <file leaf-file-name="todo.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/js/todo.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="78" column="6" selection-start-line="78" selection-start-column="6" selection-end-line="78" selection-end-column="6" />
+            <state relative-caret-position="295">
+              <caret line="347" column="19" selection-start-line="347" selection-start-column="19" selection-end-line="347" selection-end-column="19" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -168,11 +170,11 @@
         <option value="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/layout.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/libs/boostrapjs.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/libs/react.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/todo/index.html.twig" />
         <option value="$PROJECT_DIR$/web/js/jcumines.js" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/TodoController.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Tests/Controller/TodoControllerTest.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Document/Todo.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/todo/index.html.twig" />
         <option value="$PROJECT_DIR$/web/css/todoEditor.css" />
         <option value="$PROJECT_DIR$/web/js/todo.js" />
       </list>
@@ -701,7 +703,7 @@
       <workItem from="1475305043502" duration="19234000" />
       <workItem from="1475370106182" duration="53174000" />
       <workItem from="1475433364136" duration="1115000" />
-      <workItem from="1475459362844" duration="3314000" />
+      <workItem from="1475459362844" duration="4877000" />
     </task>
     <task id="LOCAL-00001" summary="TodoController started inc test and supporting settings">
       <created>1475322841650</created>
@@ -780,7 +782,14 @@
       <option name="project" value="LOCAL" />
       <updated>1475462303080</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Strikethrough on completed">
+      <created>1475462692701</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1475462692701</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -816,7 +825,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98042000" />
+    <option name="totallyTimeSpent" value="99605000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -879,7 +888,8 @@
     <MESSAGE value="Remove now redundant method" />
     <MESSAGE value="Stray global var declaration&#10;" />
     <MESSAGE value="Toggle all button" />
-    <option name="LAST_COMMIT_MESSAGE" value="Toggle all button" />
+    <MESSAGE value="Strikethrough on completed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Strikethrough on completed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1216,24 +1226,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/todo/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="21" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/jcumines.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6817">
-          <caret line="403" column="0" selection-start-line="403" selection-start-column="0" selection-end-line="403" selection-end-column="15" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Document/Todo.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="509">
@@ -1263,18 +1255,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/todo/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="34" column="7" selection-start-line="34" selection-start-column="7" selection-end-line="34" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/jcumines.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-187">
+          <caret line="403" column="0" selection-start-line="403" selection-start-column="0" selection-end-line="403" selection-end-column="15" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/css/todoEditor.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="46" column="2" selection-start-line="46" selection-start-column="2" selection-end-line="46" selection-end-column="2" />
+        <state relative-caret-position="495">
+          <caret line="72" column="8" selection-start-line="72" selection-start-column="1" selection-end-line="72" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/js/todo.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="78" column="6" selection-start-line="78" selection-start-column="6" selection-end-line="78" selection-end-column="6" />
+        <state relative-caret-position="295">
+          <caret line="347" column="19" selection-start-line="347" selection-start-column="19" selection-end-line="347" selection-end-column="19" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>

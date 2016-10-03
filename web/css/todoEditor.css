@@ -69,3 +69,7 @@ contentWidget styles
 .toggleButton {
 
 }
+
+.noItems {
+    display:none;
+}
