@@ -521,9 +521,13 @@ var TodoBox = React.createClass({
         );
     }
 });
-//var pageUrl = document.location.pathname.match(/[^\/]+$/)[0];
+var pageUrl = document.location.pathname.match(/[^\/]+$/);
+if (pageUrl != null)
+    pageUrl = pageUrl[0] + '/';
+else
+    pageUrl = '';
 ReactDOM.render(
-    <TodoBox url={"todo"} pollInterval={2000}/>
+    <TodoBox url={pageUrl+"todo"} pollInterval={2000}/>
     ,
     document.getElementById('contentWidget')
 );
